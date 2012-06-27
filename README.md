@@ -1,2 +1,3 @@
 Kanban-Board
 ============
+Vsichni pripojeni
