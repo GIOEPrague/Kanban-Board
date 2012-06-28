@@ -61,6 +61,8 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 			'color'		: color,
 			'boxes'		: null
 		}
+
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -69,6 +71,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	 */
 	$scope.removeColumn = function(idColumn) {
 		delete $scope.columns[idColumn];
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -84,6 +87,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 		$scope.columns[idColumn].position = position;
 		$scope.columns[idColumn].limit = limit;
 		$scope.columns[idColumn].color = color;
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -108,6 +112,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 			'title':title,
 			'tickets':null
 		}
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -117,6 +122,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	 */
 	$scope.removeBox = function(column, idBox) {
 		delete column[idBox];
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -127,6 +133,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	 */
 	$scope.updateBox = function(column, idBox, title) {
 		column[idBox].title = title;
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -151,6 +158,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 		for (column in $scope.columns) {
 			// TODO add ticket
 		}
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -160,6 +168,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	 */
 	$scope.removeTicket = function(box, idTicket) {
 		delete box[idTicket];
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
@@ -179,6 +188,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 		ticket.priority = priority;
 		ticket.shortDescription = shortDescription;
 		ticket.fullDescription = fullDescription;
+		new ColumnsSave($scope.columns).$save();
 	}
 
 	/**
