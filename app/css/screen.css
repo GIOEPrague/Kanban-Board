@@ -186,8 +186,8 @@ header nav li {display: inline-block; margin: 0 0 0 .5em;}
 header nav a {}
 header nav a img {float: left; padding: .5em; margin-left: -1em;}
 
-header nav a#newtask   {}
-header nav a#newcolumn {background: #009c2d;}
+header nav a.newtask   {background: #009c2d;}
+header nav a.newcolumn {}
 
 header nav a:hover {
 	background: #D84929 !important; 
