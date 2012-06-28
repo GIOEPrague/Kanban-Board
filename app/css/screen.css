@@ -220,14 +220,17 @@ header nav a:hover {
 }
 .task {
 	background: #ffff99;
+	background-image: url('gra-b.png');
+	background-repeat: repeat-x;
+	background-position: bottom; 
 	padding: 1em;
 	margin: 0 0 1em 0;
 	text-align: justify;
 	position: relative;
 
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 4px 0 8px 0;
+	-moz-border-radius: 4px 0 8px 0;
+	border-radius: 4px 0 8px 0;
 }
 .task .icon {
 	background: url('pin.png') no-repeat;
@@ -270,10 +273,11 @@ a.coments:hover {
 }
 
 /* Colors */
-.c-red 		{background: #ffd1d0;}
-.c-blue 	{background: #afd8ff;}
-.c-yellow 	{background: #feffaf;}
-.c-green 	{background: #bcffbc;}
+.c-red 		{background-color: #ffd1d0;}
+.c-blue 	{background-color: #afd8ff;}
+.c-yellow 	{background-color: #feffaf;}
+.c-green 	{background-color: #bcffbc;}
+.c-white 	{background-color: #ffffff;}
 
 /* Layout */
 
