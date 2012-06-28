@@ -259,8 +259,8 @@ header nav a:hover {
 
 /* Comments */
 a.coments {
-	background: #d84929; 
-	color: #fff;
+	background: #d84929 !important; 
+	color: #fff !important;
 	clear: both;
 	float: right;
 	margin: .3em 0 0;
@@ -268,8 +268,8 @@ a.coments {
 	text-decoration: none;
 }
 a.coments:hover {
-	background: #fff;
-	color: #d84929;
+	background: #fff !important;
+	color: #d84929 !important;
 }
 
 /* Colors */
