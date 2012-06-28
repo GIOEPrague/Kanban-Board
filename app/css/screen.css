@@ -318,12 +318,12 @@ input[type=submit]:hover {
 }
 
 /* Forms */
-form {position: relative;}
+form {position: relative; padding: 1em;}
 form label {
 	display: block;
 	font-size: 130%;
 	color: #333333;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+	text-shadow: 0px 1px 0px #fff;  
 	padding: .3em 0;
 }
 
@@ -345,7 +345,8 @@ input[type=email] {
 	border: 1px solid #717171;  
 	-webkit-box-shadow: 1px 1px 0px #efefef;  
 	-moz-box-shadow: 1px 1px 0px #efefef;  
-	box-shadow:  1px 1px 0px #efefef;  
+	box-shadow:  1px 1px 0px #efefef;
+	min-width: 200px; 
 }
 input:focus {  
     -webkit-box-shadow: 0px 0px 5px #007eff;  
@@ -353,8 +354,9 @@ input:focus {
     box-shadow: 0px 0px 5px #007eff;  
 }  
 .error {color: #D84929;}
+form .error {display: block;}
 
-form input[type=submit] {float: right;}
+form input[type=submit] {min-width: 180px;}
 
 /* Animation */
 
