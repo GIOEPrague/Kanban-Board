@@ -11,7 +11,8 @@
  * @author lawondyss@gmail.com (Ladsilav Vondracek)
  * @version 0.1
  */
-function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
+function BoardCtrl($scope, $routeParams, $http) {
+	/*, Columns, ColumnsSave*/
 
 	// message for submit with errors
 	$scope.errMessage = '';
@@ -27,12 +28,13 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	*/
 	
     $scope.columns = {'col1':{
-		'box1':{'title':'nil','position':1,'color':'#0000ff','tickets':{
-			'ab':{'title':'nil','position':1,'color':'#ff0000','priority':3,'shortDescription':'test task1','description':'Long story short1','user':null},
-			'abc':{'title':'nil','position':2,'color':'#ff0000','priority':3,'shortDescription':'test task2','description':'Long story short2','user':null},
-			'abcd':{'title':'nil','position':3,'color':'#ff0000','priority':3,'shortDescription':'test task3','description':'Long story short3','user':null}
+		'box1':{'title':'Backlog','position':1,'color':'#0000ff','tickets':{
+			'ab':{'title':'Task1','position':1,'color':'#ff0000','priority':3,'shortDescription':'test task1','description':'Long story short1','user':null},
+			'abc':{'title':'Task2','position':2,'color':'#ff0000','priority':3,'shortDescription':'test task2','description':'Long story short2','user':null},
+			'abcd':{'title':'Tas3','position':3,'color':'#ff0000','priority':3,'shortDescription':'test task3','description':'Long story short3','user':null}
 		}}},
-		'col2':{'box2':{'title':'nil','position':2,'color':'#00ff00','tickets':{}}}
+		'col2':{'box2':{'title':'Progress','position':2,'color':'#00ff00','tickets':{}}},
+		'col3':{'box2':{'title':'Complete','position':2,'color':'#00ff00','tickets':{}}}
 	};
 	
 	/* users */
