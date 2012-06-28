@@ -30,6 +30,7 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Get Column
+	 * @param {string} ID column	 
 	 */
 	 $scope.getColumn = function(idColumn) {
 	 	return $scope.columns[idColumn];
@@ -66,11 +67,11 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Update Column
-	 * @param {string}
-	 * @param {string}
-	 * @param {int}
-	 * @param {int}
-	 * @param {string}
+	 * @param {string} ID column
+	 * @param {string} Title
+	 * @param {int} Position
+	 * @param {int} Limit
+	 * @param {string} Color
 	 */
 	$scope.updateColumn = function(idColumn, title, position, limit, color) {
 		$scope.columns[idColumn].title = title;
@@ -81,8 +82,8 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Get Box
-	 * @param {object}
-	 * @param {string}
+	 * @param {object} Column
+	 * @param {string} ID box
 	 */
 	 $scope.getBox = function(column, idBox) {
 	 	return column[idBox];
@@ -90,8 +91,8 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Add Box
-	 * @param {object}
-	 * @param {string}
+	 * @param {object} Column
+	 * @param {string} Title
 	 */
 	$scope.addBox = function(column, title) {
 		// we need unique ID
@@ -105,8 +106,8 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Remove Box
-	 * @param {object}
-	 * @param {string}
+	 * @param {object} Column
+	 * @param {string} ID box
 	 */
 	$scope.removeBox = function(column, idBox) {
 		delete column[idBox];
@@ -114,9 +115,9 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Update Box
-	 * @param {object}
-	 * @param {string}
-	 * @param {string}
+	 * @param {object} Column
+	 * @param {string} ID box
+	 * @param {string} Title
 	 */
 	$scope.updateBox = function(column, idBox, title) {
 		column[idBox].title = title;
@@ -124,8 +125,8 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Get Ticket
-	 * @param {object}
-	 * @param {string}
+	 * @param {object} Box
+	 * @param {string} ID ticket
 	 */
 	$scope.getTicket = function(box, idTicket) {
 		return box[idTicket];
@@ -133,21 +134,21 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Add Ticket
-	 * @param {string}
-	 * @param {int}
-	 * @param {string}
-	 * @param {int}
-	 * @param {string}
-	 * @param {string}
+	 * @param {string} Title
+	 * @param {int} Position
+	 * @param {string} Color
+	 * @param {int} Priority
+	 * @param {string} Short description
+	 * @param {string} Full description
 	 */
 	$scope.addTicket = function(title, position, color, priority, shortDescription, fullDescription) {
-
+		
 	}
 
 	/**
 	 * @desc Remove Ticket
-	 * @param {object}
-	 * @param {string}
+	 * @param {object} Box
+	 * @param {string} ID ticket
 	 */
 	$scope.removeTicket = function(box, idTicket) {
 		delete box[idTicket];
@@ -155,13 +156,13 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Update Ticket
-	 * @param {object}
-	 * @param {string}
-	 * @param {int}
-	 * @param {string}
-	 * @param {int}
-	 * @param {string}
-	 * @param {string}
+	 * @param {object} Ticket
+	 * @param {string} Title
+	 * @param {int} Position
+	 * @param {string} Color
+	 * @param {int} Priority
+	 * @param {string} Short description
+	 * @param {string} Full description
 	 */
 	$scope.updateTicket = function(ticket, title, position, color, priority, shortDescription, fullDescription) {
 		ticket.title = title;
@@ -174,7 +175,7 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Get User data
-	 * @param {string}
+	 * @param {string} ID user
 	 */
 	$scope.getUser = function(idUser) {
 		return $scope.users[idUser];
@@ -182,11 +183,11 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Add User
-	 * @param {string}
-	 * @param {string}
-	 * @param {string}
-	 * @param {string}
-	 * @param {string}
+	 * @param {string} Name
+	 * @param {string} Email
+	 * @param {string} Color
+	 * @param {string} Password
+	 * @param {string} Avatar URL
 	 */
 	$scope.addUser = function(name, email, color, password, avatar) {
 		// we need unique ID
@@ -203,7 +204,7 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Remove User
-	 * @param {string}
+	 * @param {string} ID user
 	 */
 	$scope.removeUser = function(idUser) {
 		delete $scope.users[idUser];
@@ -211,12 +212,12 @@ function BoardCtrl($scope, $routeParams, $http) {
 
 	/**
 	 * @desc Update User
-	 * @param {string}
-	 * @param {string}
-	 * @param {string}
-	 * @param {string}
-	 * @param {string}
-	 * @param {string}
+	 * @param {string} ID user
+	 * @param {string} Name
+	 * @param {string} Email
+	 * @param {string} Color
+	 * @param {string} Password
+	 * @param {string} Avatar
 	 */
 	$scope.updateUser = function(idUser, name, email, color, password, avatar) {
 		$scope.users[idUser].name = name;
