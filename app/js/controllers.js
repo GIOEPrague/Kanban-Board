@@ -142,7 +142,9 @@ function BoardCtrl($scope, $routeParams, $http) {
 	 * @param {string} Full description
 	 */
 	$scope.addTicket = function(title, position, color, priority, shortDescription, fullDescription) {
-		
+		for (column in $scope.columns) {
+			// TODO add ticket
+		}
 	}
 
 	/**
