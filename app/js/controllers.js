@@ -11,7 +11,7 @@
  * @author lawondyss@gmail.com (Ladsilav Vondracek)
  * @version 0.1
  */
-function BoardCtrl($scope, $routeParams, $http) {
+function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	/*, Columns, ColumnsSave*/
 
 	// message for submit with errors
@@ -45,7 +45,11 @@ function BoardCtrl($scope, $routeParams, $http) {
 	};
     
 
-    //$scope.columns = Columns.query();
+   //$scope.columns = Columns.query();
+   //$scope.columns = $scope.columns.data;
+   //delete $scope.columns.data;
+
+   //console.log($scope.columns);
 
 	/**
 	 * @desc Get Column
