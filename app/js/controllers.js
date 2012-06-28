@@ -1,15 +1,17 @@
 'use strict';
-
-/* Controllers */
-
+/**
+ * @fileoverview Controllers
+ * @author vladimir.belohradsky@gmail.com (Vladimir Belohradsky)
+ * @author lawondyss@gmail.com (Ladsilav Vondracek)
+ */
 
 /**
- * @desc Handle form for columns
- * @author lawondyss@gmail.com (Ladislav Vondracek)
+ * @desc Handle columns
+ * @author vladimir@belohradsky.cz (Vladimir Belohradsky)
+ * @author lawondyss@gmail.com (Ladsilav Vondracek)
  * @version 0.1
  */
-function ColumnFormCtrl($scope)
-{
+function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	// data for form
 	$scope.column = {'id':8, 'name':'první', 'order':1, 'limit':10, 'color':'#336699'};
 
@@ -23,59 +25,25 @@ function ColumnFormCtrl($scope)
 
 
 	/**
-	 * @desc Submitted form
+	 * @desc Submitted column form
 	 */
-	$scope.submit = function()
-	{
+	$scope.submitColumn = function(){
 		// submitted with errors
-		if(this.columnForm.$invalid)
-		{
+		if(this.columnForm.$invalid){
 			// error message
-			$scope.errMessage = 'Invalid values in form.'
+			$scope.errMessage = 'Invalid values in column form.'
 		}
-		else
-		{
+		else{
 			// cleared error message
 			$scope.errMessage = '';
 
-			// values to save
-			var data = {
-				'name':this.column.name,
-				'order':this.column.order,
-				'limit':this.column.limit,
-				'color':this.column.color
-			};
-
 			// add or update
-			if($scope.column.id)
-			{
-				$scope.update($scope.column.id, data);
+			if($scope.column.id){
+				$scope.updateColumn($scope.column.id, this.column.title, this.column.position, this.column.limit, this.column.color);
 			}
-			else
-			{
-				$scope.add(data);
+			else{
+				$scope.addColumn(this.column.title, this.column.position, this.column.limit, this.column.color);
 			}
 		}
-	}
-
-
-	/**
-	 * @desc Add new column
-	 * @param JSON
-	 */
-	$scope.add = function(data)
-	{
-		$scope.board.addColumn(data.name, data.order, data.limit, data.color);
-	}
-
-
-	/**
-	 * @desc Update column
-	 * @param int
-	 * @param JSON
-	 */
-	$scope.update = function(id, data)
-	{
-		$scope.board.updateColumn(id, data.name, data.order, data.limit, data.color);
 	}
 }

@@ -7,17 +7,17 @@
 		<script src="js/controllers.js"></script>
   </head>
   <body>
-		<form name="columnForm" ng-submit="submit()" ng-controller="ColumnFormCtrl">
+		<form name="columnForm" ng-submit="submitColumn()" ng-controller="ColumnFormCtrl">
 			<div class="error" ng-show="columnForm.$error">{{errMessage}}</div>
 
-			<label>Name:</label> <input type="text" name="name" maxlength="20" required
-																	ng-model="column.name" ng-pattern="patternName">
+			<label>Name:</label> <input type="text" name="title" maxlength="20" required
+																	ng-model="column.title" ng-pattern="patternName">
 			<span class="error" ng-show="columnForm.name.$error.required">Required!</span>
 			<span class="error" ng-show="columnForm.name.$error.pattern">Too long!</span>
-			<label>Order:</label> <input type="number" name="order" min="0" required
+			<label>Order:</label> <input type="number" name="position" min="0" required
 																	 ng-model="column.order" ng-pattern="patternPozitiveNumber">
-			<span class="error" ng-show="columnForm.order.$error.required">Required!</span>
-			<span class="error" ng-show="columnForm.order.$error.pattern">Only pozitive number!</span>
+			<span class="error" ng-show="columnForm.position.$error.required">Required!</span>
+			<span class="error" ng-show="columnForm.position.$error.pattern">Only pozitive number!</span>
 			<label>Limit:</label> <input type="number" name="limit" min="0" required
 																	 ng-model="column.limit" ng-pattern="patternPozitiveNumber">
 			<span class="error" ng-show="columnForm.limit.$error.required">Required!</span>
