@@ -27,7 +27,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 		column -> box -> ticket
 	*/
 	
-    /*$scope.columns = {'col1':{
+    $scope.columns = {'col1':{
 		'box1':{'title':'Backlog','position':1,'color':'#aaaaff','tickets':{
 			'ab':{'title':'Task1','position':1,'color':'#ffaaaa','priority':3,'shortDescription':'test task1','description':'Long story short1','user':null},
 			'abc':{'title':'Task2','position':2,'color':'#ffaaff','priority':3,'shortDescription':'test task2','description':'Long story short2','user':null},
@@ -35,7 +35,7 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 		}}},
 		'col2':{'box2':{'title':'Progress','position':2,'color':'#00ff00','tickets':{}}},
 		'col3':{'box2':{'title':'Complete','position':2,'color':'#00ff00','tickets':{}}}
-	};*/
+	};
 	
 	/* users */
 
@@ -45,7 +45,11 @@ function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	};
     
 
-   $scope.columns = Columns.query();
+   //$scope.columns = Columns.query();
+   //$scope.columns = $scope.columns.data;
+   //delete $scope.columns.data;
+
+   //console.log($scope.columns);
 
 	/**
 	 * @desc Get Column
