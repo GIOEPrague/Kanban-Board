@@ -29,20 +29,7 @@
 			</ul>
 		</nav>    
 	</header>
-	<script>
-	$(function() {
-		$( "div.droptrue" ).sortable({
-			connectWith: "div.column-box"
-		});
 
-		$( "div.dropfalse" ).sortable({
-			connectWith: "div.column-box",
-			dropOnEmpty: false
-		});
-
-		$( "#sortable1, #sortable2, #sortable3" ).disableSelection();
-	});
-	</script>
     
 	<div id="columns" class="clearfix">
 		<div id="columns-box">
@@ -87,6 +74,20 @@
 	<script src="js/controllers.js"></script>
 	<script src="js/filters.js"></script>
 	<script src="js/directives.js"></script>
+	<script>
+		$(function() {
+			$( "div.droptrue" ).sortable({
+				connectWith: "div.column-box"
+			});
+
+			$( "div.dropfalse" ).sortable({
+				connectWith: "div.column-box",
+				dropOnEmpty: false
+			});
+
+			$( "#sortable1, #sortable2, #sortable3" ).disableSelection();
+		});
+	</script>
 </div>
 </body>
 </html>
