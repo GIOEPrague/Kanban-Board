@@ -45,7 +45,7 @@ function BoardCtrl($scope, $routeParams, $http) {
 	};
     
 
-    //$scope.columns = Columns.query();
+   // $scope.columns = Columns.query();
 
 	/**
 	 * @desc Get Column
