@@ -2,11 +2,15 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="utf-8">
-    <title>My AngularJS App</title>
+    <title>Kanban Board</title>
+    <meta name="keywords" content="Kanban, Board" />
+    
     <link rel="stylesheet" href="css/app.css"/>
     <link rel="stylesheet" href="css/screen.css"/>
+    
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="author" href="humans.txt" type="text/plain" />
+
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui-1.8.21.custom.min.js"></script>
     <script src="js/jquery.fancybox.pack.js"></script>
@@ -19,10 +23,10 @@
 <body>
 <div id="page">
     <header class="clearfix">
-        <a id="logo" class="pulse" href="#"><img src="css/logo.png" alt="logo" /></a>
+        <a id="logo" href="#"><img src="css/logo.png" alt="logo" /></a>
         <nav>
             <ul>
-                <li><a href="#" class="button various fancybox.ajax" title="new task ui-state-default"><img src="css/plus.png" alt="plus" />new task ui-state-default</a></li>
+                <li><a href="#" class="button various fancybox.ajax" title="new task ui-state-default"><img src="css/plus.png" alt="plus" />new task</a></li>
                 <li><a href="#" class="button" title="new column"><img src="css/plus.png" alt="plus" />new column</a></li>
             </ul>
         </nav>    
@@ -30,11 +34,11 @@
     <script>
     $(function() {
         $( "div.droptrue" ).sortable({
-            connectWith: "div"
+            connectWith: "div.column-box"
         });
 
         $( "div.dropfalse" ).sortable({
-            connectWith: "div",
+            connectWith: "div.column-box",
             dropOnEmpty: false
         });
 
@@ -45,15 +49,15 @@
         <div id="columns-box">
             <div class="column column-root">
                 <div class="column-box droptrue clearfix">
-                    <div class="task ui-state-default c-blue clearfix">
+                    <h2 class="label dropfalse">Column header</h2>
+                    <div class="task c-blue clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
-                    <div class="task ui-state-default clearfix">
-                        <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                    <div class="task clearfix">
+                        <h3>Fail forever</h3>
                         <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
@@ -61,15 +65,15 @@
             </div>
             <div class="column column-root">
                 <div class="column-box dropfalse clearfix">
+                    <h2 class="label">Column header</h2>
                     <div class="task ui-state-default c-blue clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
                     <div class="task ui-state-default clearfix">
-                        <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
@@ -77,23 +81,25 @@
             </div>
             <div class="column column-root">
                 <div class="column-box droptrue clearfix">
+                    <h2 class="label">Column header</h2>
                     <div class="task ui-state-highlight clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
                 </div>
                 <div class="column-box droptrue clearfix">
+                    <h2 class="label">Column header</h2>
                     <div class="task ui-state-highlight c-blue clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
                     <div class="task ui-state-highlight clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
@@ -103,7 +109,7 @@
                 <div class="column-box droptrue clearfix">
                     <div class="task ui-state-default c-blue clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
@@ -111,7 +117,7 @@
                 <div class="column-box droptrue clearfix">
                     <div class="task ui-state-default c-blue clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
@@ -119,7 +125,7 @@
                 <div class="column-box droptrue clearfix">
                     <div class="task ui-state-default c-blue clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>
@@ -129,19 +135,19 @@
                 <div class="column-box droptrue clearfix">
                     <div class="task ui-state-default c-red clearfix">
                         <div class="icon"></div>
-                        <h2>Prefix redictioansdasd</h2>
+                        <h3>Prefix redictioansdasd</h3>
                         <div>scing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">14</a>
                     </div>
                     <div class="task ui-state-default clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">411</a>
                     </div>
                     <div class="task ui-state-default c-green clearfix">
                         <div class="icon"></div>
-                        <h2>Fail forever</h2>
+                        <h3>Fail forever</h3>
                         <div>Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
                         <a href="#" class="coments box" title="Coments">4</a>
                     </div>

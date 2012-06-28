@@ -150,7 +150,23 @@ footer {
 	padding: 1em;
 }
 
-#logo {float: left}
+#logo {
+	float: left;
+	-webkit-transition: all 0.1s ease-out;  /* Saf3.2+, Chrome */
+	-moz-transition: all 0.1s ease-out;  /* FF4+ */
+	-ms-transition: all 0.1s ease-out;  /* IE10 */
+	-o-transition: all 0.1s ease-out;  /* Opera 10.5+ */
+	transition: all 0.1s ease-out;
+}
+#logo:hover {
+	-webkit-transform: rotate(-2deg);  /* Saf3.1+, Chrome  */
+	-moz-transform: rotate(-2deg);  /* FF3.5+  */
+	-ms-transform: rotate(-2deg);  /* IE9  */
+	-o-transform: rotate(-2deg);  /* Opera 10.5  */
+	transform: rotate(-2deg);
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
 
 /* footer */
 
@@ -191,7 +207,7 @@ header nav a:hover {
 
 /* Columns */
 #columns {
-	background: url('paper-cork.gif') repeat;
+	background: url('cork.jpg') repeat;
 	margin: 0 0 0 -1em;
 	padding: 2em;
 }
@@ -211,6 +227,8 @@ header nav a:hover {
 
 	margin: 0 0 1em 1em;
 	padding: 1em;
+	min-width: 200px;
+	_width: 200px;
 }
 .task {
 	background: #ffff99;
@@ -231,6 +249,21 @@ header nav a:hover {
 	right: -1em;
 	top: -1em;
 	z-index: 10;
+
+	-webkit-transition: all 0.2s ease-out;  /* Saf3.2+, Chrome */
+	-moz-transition: all 0.2s ease-out;  /* FF4+ */
+	-ms-transition: all 0.2s ease-out;  /* IE10 */
+	-o-transition: all 0.2s ease-out;  /* Opera 10.5+ */
+	transition: all 0.2s ease-out;
+}
+.task:hover {
+	-webkit-transform: rotate(2deg);  /* Saf3.1+, Chrome  */
+	-moz-transform: rotate(2deg);  /* FF3.5+  */
+	-ms-transform: rotate(2deg);  /* IE9  */
+	-o-transform: rotate(2deg);  /* Opera 10.5  */
+	transform: rotate(2deg);
+	opacity: 0.9;
+	filter: alpha(opacity=90);
 }
 
 /* Comments */
@@ -275,6 +308,27 @@ a.coments:hover {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+}
+
+/* Forms */
+
+input.text {
+    -moz-transition: opacity 0.1s ease 0s, font-size 0.1s ease 0s;
+    -moz-user-select: none;
+    bottom: 1px;
+    color: #999999;
+    cursor: text;
+    font-size: 13px;
+    height: 20px;
+    left: 2px;
+    line-height: 20px;
+    padding: 4px;
+    position: absolute;
+    right: 1px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    top: 1px;
+    white-space: nowrap;
+    z-index: 1;
 }
 
 /* Animation */
