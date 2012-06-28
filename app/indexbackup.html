@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Kanban Board</title>
+    <meta name="keywords" content="Kanban, Board" />
+    <link rel="stylesheet" href="css/screen.css"/>
+    
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="author" href="humans.txt" type="text/plain" />
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
+    </script>
+</head>
+<body>
+<div id="page">
+    <header class="clearfix">
+        <a id="logo" href="#"><img src="css/logo.png" alt="logo" /></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="button newtask" title="new task ui-state-default"><img src="css/plus.png" alt="plus" />new task</a></li>
+                <li><a href="#" class="button newcolumn" title="new column"><img src="css/plus.png" alt="plus" />new column</a></li>
+            </ul>
+        </nav>    
+    </header>
+    <script>
+    $(function() {
+        $( "div.droptrue" ).sortable({
+            connectWith: "div.column-box"
+        });
+
+        $( "div.dropfalse" ).sortable({
+            connectWith: "div.column-box",
+            dropOnEmpty: false
+        });
+
+        $( "#sortable1, #sortable2, #sortable3" ).disableSelection();
+    });
+    </script>
+    
+    <div id="columns" class="clearfix">
+        <div id="columns-box">
+            <div class="column column-root">
+                <div class="column-box droptrue clearfix">
+                    <h2 class="label dropfalse">Column header</h2>
+                    <article class="task c-blue clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                    <article class="task clearfix">
+                        <h3>Fail forever</h3>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div>    
+            </div>
+            <div class="column column-root">
+                <div class="column-box dropfalse clearfix">
+                    <h2 class="label">Column header</h2>
+                    <article class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                    <article class="task ui-state-default clearfix">
+                        <h3>Fail forever</h3>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div>    
+            </div>
+            <div class="column column-root">
+                <div class="column-box droptrue clearfix">
+                    <h2 class="label">Column header</h2>
+                    <article class="task ui-state-highlight clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div>
+                <div class="column-box droptrue clearfix">
+                    <h2 class="label">Column header</h2>
+                    <article class="task ui-state-highlight c-blue clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                    <article class="task ui-state-highlight clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div>     
+            </div>
+            <div class="column column-root">
+                <div class="column-box droptrue clearfix">
+                    <article class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div>
+                <div class="column-box droptrue clearfix">
+                    <article class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div> 
+                <div class="column-box droptrue clearfix">
+                    <article class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div>  
+            </div>
+            <div class="column">
+                <div class="column-box droptrue clearfix">
+                    <article class="task ui-state-default c-red clearfix">
+                        <div class="icon"></div>
+                        <h3>Prefix redictioansdasd</h3>
+                        <div>scing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">14</a>
+                    </article>
+                    <article class="task ui-state-default clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">411</a>
+                    </div>
+                    <article class="task ui-state-default c-green clearfix">
+                        <div class="icon"></div>
+                        <h3>Fail forever</h3>
+                        <div>Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </article>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <footer class="clearfix">
+        <div id="copyright">
+            <a href="#" title="#"><img src="css/developerhub.png" alt="developerhub.png" /></a>
+        </div>
+        <div id="technology">
+            <a href="#" title="#"><img src="css/mongodb.png" alt="mongodb.png" /></a>
+            <a href="#" title="#"><img src="css/html5.png" alt="html5.png" /></a>
+            <a href="#" title="#"><img src="css/angularjs.png" alt="angularjs.png" /></a>
+        </div>
+
+    </footer>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+</div>
+</body>
+</html>
