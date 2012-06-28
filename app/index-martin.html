@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>My AngularJS App</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/screen.css"/>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="author" href="humans.txt" type="text/plain" />
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
+    </script>
+</head>
+<body>
+<div id="page">
+    <header class="clearfix">
+        <a id="logo" class="pulse" href="#"><img src="css/logo.png" alt="logo" /></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="button various fancybox.ajax" title="new task ui-state-default"><img src="css/plus.png" alt="plus" />new task ui-state-default</a></li>
+                <li><a href="#" class="button" title="new column"><img src="css/plus.png" alt="plus" />new column</a></li>
+            </ul>
+        </nav>    
+    </header>
+    <script>
+    $(function() {
+        $( "div.droptrue" ).sortable({
+            connectWith: "div"
+        });
+
+        $( "div.dropfalse" ).sortable({
+            connectWith: "div",
+            dropOnEmpty: false
+        });
+
+        $( "#sortable1, #sortable2, #sortable3" ).disableSelection();
+    });
+    </script>
+    <div id="columns" class="clearfix">
+        <div id="columns-box">
+            <div class="column column-root">
+                <div class="column-box droptrue clearfix">
+                    <div class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                    <div class="task ui-state-default clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div>    
+            </div>
+            <div class="column column-root">
+                <div class="column-box dropfalse clearfix">
+                    <div class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                    <div class="task ui-state-default clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div>    
+            </div>
+            <div class="column column-root">
+                <div class="column-box droptrue clearfix">
+                    <div class="task ui-state-highlight clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div>
+                <div class="column-box droptrue clearfix">
+                    <div class="task ui-state-highlight c-blue clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                    <div class="task ui-state-highlight clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div>     
+            </div>
+            <div class="column column-root">
+                <div class="column-box droptrue clearfix">
+                    <div class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div>
+                <div class="column-box droptrue clearfix">
+                    <div class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div> 
+                <div class="column-box droptrue clearfix">
+                    <div class="task ui-state-default c-blue clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div>  
+            </div>
+            <div class="column">
+                <div class="column-box droptrue clearfix">
+                    <div class="task ui-state-default c-red clearfix">
+                        <div class="icon"></div>
+                        <h2>Prefix redictioansdasd</h2>
+                        <div>scing elit. Aenean ut turpis non quam laoreet aliquam. Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">14</a>
+                    </div>
+                    <div class="task ui-state-default clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">411</a>
+                    </div>
+                    <div class="task ui-state-default c-green clearfix">
+                        <div class="icon"></div>
+                        <h2>Fail forever</h2>
+                        <div>Proin fermentum commodo <strong>blandit.</strong> Duis vitae mi felis, vitae viverra just</div>
+                        <a href="#" class="coments box" title="Coments">4</a>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <footer class="clearfix">
+        <div id="copyright">
+            <a href="#" title="#"><img src="css/developerhub.png" alt="developerhub.png" /></a>
+        </div>
+        <div id="technology">
+            <a href="#" title="#"><img src="css/mongodb.png" alt="mongodb.png" /></a>
+            <a href="#" title="#"><img src="css/html5.png" alt="html5.png" /></a>
+            <a href="#" title="#"><img src="css/angularjs.png" alt="angularjs.png" /></a>
+        </div>
+
+    </footer>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+</div>
+</body>
+</html>
