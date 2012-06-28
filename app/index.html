@@ -50,14 +50,14 @@
 			<!-- column -->
 			<div class="column column-root" ng-repeat="column in columns">
 				<!-- box -->
-				<div class="column-box droptrue clearfix" ng-repeat="box in column">
+				<div class="column-box droptrue clearfix" ng-repeat="box in column" style="background-color: {{box.color}">
 					<h2 class="label dropfalse">{{box.title}}</h2>
 					<!-- ticket -->
-					<article class="task c-blue clearfix" ng-repeat="ticket in box.tickets">
+					<article class="task c-blue clearfix" ng-repeat="ticket in box.tickets" style="background-color: {{ticket.color}}">
 						<div class="icon"></div>
 						<h3>{{ticket.title}}</h3>
 						<div>{{ticket.shortDescription}}</div>
-						<a href="#" class="coments box" title="Coments">-</a>
+						<a href="#" class="coments box" title="Coments">0</a>
 					</article>
 					<!-- / ticket -->
                 </div>    
