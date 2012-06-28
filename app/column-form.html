@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title>Column form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="lib/angular/angular.js"></script>
+		<script src="js/controllers.js"></script>
+  </head>
+  <body>
+		<form name="columnForm" ng-submit="submit()" ng-controller="ColumnFormCtrl">
+			<div class="error" ng-show="columnForm.$error">{{errMessage}}</div>
+
+			<label>Name:</label> <input type="text" name="name" maxlength="20" required
+																	ng-model="column.name" ng-pattern="patternName">
+			<span class="error" ng-show="columnForm.name.$error.required">Required!</span>
+			<span class="error" ng-show="columnForm.name.$error.pattern">Too long!</span>
+			<label>Order:</label> <input type="number" name="order" min="0" required
+																	 ng-model="column.order" ng-pattern="patternPozitiveNumber">
+			<span class="error" ng-show="columnForm.order.$error.required">Required!</span>
+			<span class="error" ng-show="columnForm.order.$error.pattern">Only pozitive number!</span>
+			<label>Limit:</label> <input type="number" name="limit" min="0" required
+																	 ng-model="column.limit" ng-pattern="patternPozitiveNumber">
+			<span class="error" ng-show="columnForm.limit.$error.required">Required!</span>
+			<span class="error" ng-show="columnForm.limit.$error.pattern">Only pozitive number!</span>
+			<label>Color:</label> <input type="color" name="color" required
+																	 ng-model="column.color" ng-pattern="patternColor">
+			<span class="error" ng-show="columnForm.color.$error.required">Required!</span>
+			<span class="error" ng-show="columnForm.color.$error.pattern">A color pattern: #000000</span>
+			<input type="submit" value="save">
+		</form>
+  </body>
+</html>
