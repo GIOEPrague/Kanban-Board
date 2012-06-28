@@ -1,12 +1,12 @@
-'use strict';
+function TestTablesCtrl( $scope, Tables, TablesSave) {
 
-/* Controllers */
+    // select all
+    //$scope.tablesAll = Tables.query();
 
+    // selected
+    //$scope.tablesAll = Tables.query({"q":'{"username":"rdpanek"}'});
 
-function MyCtrl1() {}
-MyCtrl1.$inject = [];
+    // insert
+    //new TablesSave({"username":"rdpanek", "password":"panek2"}).$save();
 
-
-function MyCtrl2() {
 }
-MyCtrl2.$inject = [];
