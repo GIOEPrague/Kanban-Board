@@ -1,20 +1,20 @@
 angular.module('kanbanServices', ['ngResource']).
-    factory('Tables', function($resource){
-        var Tables = $resource('https://api.mongolab.com/api/1/databases' +
-            '/kanban_board/collections/users',
+    factory('Columns', function($resource){
+        var Columns = $resource('https://api.mongolab.com/api/1/databases' +
+            '/kanban_board/collections/columns',
             { apiKey: '4f9ffc47e4b0df00ef646cad'}
         );
 
-        return Tables;
+        return Columns;
     }).
-    factory('TablesSave', function($resource){
-        var TablesSave = $resource('https://api.mongolab.com/api/1/databases' +
-            '/kanban_board/collections/users',
+    factory('ColumnsSave', function($resource){
+        var ColumnsSave = $resource('https://api.mongolab.com/api/1/databases' +
+            '/kanban_board/collections/columns',
             { apiKey: '4f9ffc47e4b0df00ef646cad'},
             { charge: {method:'POST', params:{charge:true}}}
         );
 
-        return TablesSave;
+        return ColumnsSave;
     });
 
     /*

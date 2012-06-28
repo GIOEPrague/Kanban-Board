@@ -9,12 +9,13 @@
  * @author vladimir@belohradsky.cz (Vladimir Belohradsky)
  * @version 0.1
  */
-function BoardCtrl($scope, $routeParams, $http) {
+function BoardCtrl($scope, $routeParams, $http, Columns, ColumnsSave) {
 	/* 
 		temporary test data 
 		column -> box -> ticket
 	*/
-	$scope.columns = {'col1':{
+	/*
+    $scope.columns = {'col1':{
 		'box1':{'name':'nil','position':1,'color':'#0000ff','tickets':{
 			'ab':{'name':'nil','position':1,'color':'#ff0000','priority':3,'shortDescription':'test task1','description':'Long story short1','user':null},
 			'abc':{'name':'nil','position':2,'color':'#ff0000','priority':3,'shortDescription':'test task2','description':'Long story short2','user':null},
@@ -22,11 +23,16 @@ function BoardCtrl($scope, $routeParams, $http) {
 		}}},
 		'col2':{'box2':{'name':'nil','position':2,'color':'#00ff00','tickets':{}}}
 	};
+	*/
 	/* users */
+
 	$scope.users = {
 		'us1':{'name':'Franta','email':'franta@geeks.cz','color':'#fff000','password':'lala','avatar':null},
 		'us2':{'name':'Evzen','email':'evzen@geeks.cz','color':'#000fff','password':'lala','avatar':null}
 	};
+    
+
+    $scope.columns = Columns.query();
 
 	/**
 	 * @desc Get Column
